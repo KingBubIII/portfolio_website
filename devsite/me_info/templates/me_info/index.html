@@ -2,11 +2,18 @@
 {% load static %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/about_me.css' %}">
 
-<div class="container text-center">
+<div class="container">
   <div class="row">
-    <div id="col carouselExampleIndicators" class="carousel slide">
+    <h1 class="about-me-headers">Introducing Me</h1>
+    <p>
+      my paragraph
+    </p>
+  </div>
+  <br>
+  <div class="row">
+    <div id="carouselExampleIndicators" class="carousel slide" style="width:450px; height:600px;">
       <div class="carousel-inner">
         {% for image_path in image_paths %}
           {% if forloop.first %}
@@ -28,8 +35,24 @@
       </button>
     </div>
     <div class="col">
-      test
+      <h1 class="about-me-headers">Accomplishments</h1>
+        <ul>
+          <h4>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </h4>
+        </ul>
+      <h1 class="about-me-headers">Technical Skills</h1>
+        <ul>
+          <h4>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </h4>
+        </ul>
     </div>
+
   </div>
 </div>
 {% endblock %}
