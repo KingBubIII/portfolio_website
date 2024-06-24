@@ -1,7 +1,35 @@
-{% extends "me_info\\navbar.html" %}
+{% extends "me_info/navbar.html" %}
+{% load static %}
 
 {% block content %}
-  <div id="content">
-    asdf
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<div class="container text-center">
+  <div class="row">
+    <div id="col carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-inner">
+        {% for image_path in image_paths %}
+          {% if forloop.first %}
+            <div class="carousel-item active">
+          {% else %}
+            <div class="carousel-item">
+          {% endif %}
+            <img src="{% static image_path %}" class="d-block w-100">
+          </div>
+        {% endfor %}
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div class="col">
+      test
+    </div>
   </div>
+</div>
 {% endblock %}

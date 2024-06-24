@@ -21,3 +21,4 @@ urlpatterns = [
     path("home/", include("me_info.urls")),
     path('admin/', admin.site.urls),
 ]
+
