@@ -3,9 +3,12 @@ from settings import MEDIA_URL, BASE_DIR, STATIC_URL
 from os import listdir
 
 # Create your views here.
-def home(request):
+def intro(request):
     images_dir = listdir(str(BASE_DIR)+"\\devsite\\me_info\\static\\img\\")
     images_paths = [MEDIA_URL+img for img in images_dir]
     # inital_image_path = images_paths.pop(0)
     context = {"image_paths": images_paths}
-    return render(request, "me_info\\index.html", context)
+    return render(request, "me_info\\intro.html", context)
+
+def work_history(request):
+    return render(request, "me_info\\work_history.html")
