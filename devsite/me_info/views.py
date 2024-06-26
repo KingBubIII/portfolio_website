@@ -14,3 +14,6 @@ def intro(request):
 
 def work_history(request):
     return render(request, "me_info\\work_history.html")
+
+def projects(request):
+    return render(request, "me_info\\projects.html")
