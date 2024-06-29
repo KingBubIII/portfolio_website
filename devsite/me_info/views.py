@@ -19,4 +19,6 @@ def work_history(request):
     return render(request, "me_info\\work_history.html", context)
 
 def projects(request):
-    return render(request, "me_info\\projects.html")
+    projects_data = load(open(JSON_PATH + "about_me.json"))["projects"]
+    context = {"projects_data": projects_data}
+    return render(request, "me_info\\projects.html", context)
