@@ -1,0 +1,62 @@
+{
+    "work_history": [
+        {
+            "title": "Software Support Engineer",
+            "company": "Corning Inc",
+            "start_date": "September 2022",
+            "end_date": "Present",
+            "skills_used": ["Python", "SQL", "AVEVA PI Systems", "Database management"],
+            "tasks": [
+                        "Created programs to filter, retrive, and manipulate data from AVEVA PI Systems",
+                        "Admistrative tasks on databases, such as resource and storage monitoring",
+                        "Created complex, including dynamically created queries/ stored proceedures"
+                    ],
+            "other": ["Communicated with global team members and clients"]
+        },
+        {
+            "title": "Test Engineer",
+            "company": "Southern Tier Technology",
+            "start_date": "July 2021",
+            "end_date": "August 2022",
+            "skills_used": [
+                "PICkit3",
+                "Surface mount and through hole soldering",
+                "Oscilliscope",
+                "C programming",
+                "Multimeter"
+            ],
+            "tasks": [
+                "Programmed new and modified existing functions for power monitoring functions such as surge, swell, and sag detection",
+                "Measured resistance and checked continuity of power monitoring panels",
+                "Soldering components together"
+            ],
+            "other": []
+        },
+        {
+            "title": "Contract Engineer",
+            "company": "Corning Inc",
+            "start_date": "September 2020",
+            "end_date": "June 2021",
+            "skills_used": ["Multimeter", "Lockout/ tagout proccedures", "VBA"],
+            "tasks": ["Ground bond testing", "Built maintenance decision matrix", "Created app implimenting matrix for in person collected data"],
+            "other": ["Transistioned to remote work around January 2021"]
+        },
+        {
+            "title": "Intern",
+            "company": "Lockheed Martin",
+            "start_date": "July 2018",
+            "end_date": "September 2018",
+            "skills_used": [
+                "Arduino",
+                "Multimeter",
+                "Wiring",
+                "C++"
+            ],
+            "tasks": [
+                "Create projects to show the Design Process",
+                "Created internal tool to show all available tools in workshop areas"
+            ],
+            "other": []
+        }
+    ]
+}
