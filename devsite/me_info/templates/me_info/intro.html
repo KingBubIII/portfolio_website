@@ -17,7 +17,7 @@
   <div class="row">
     <div id="carouselExampleIndicators" class="carousel slide" style="width:600px; height:800px;">
       <div class="carousel-inner">
-        {% for image_path in image_paths %}
+        {% for image_path in intro_data.image_paths %}
           {% if forloop.first %}
             <div class="carousel-item active">
           {% else %}
@@ -42,7 +42,7 @@
         <div class="card-body">
           <ul>
             <h4>
-              {% for item in education %}
+              {% for item in intro_data.education %}
                 <li>{{ item }}</li>
               {% endfor %}
             </h4>
@@ -55,7 +55,7 @@
         <div class="card-body">
           <ul>
             <h4>
-              {% for accomplishment in accomplishments %}
+              {% for accomplishment in intro_data.accomplishments %}
                 <li>{{ accomplishment }}</li>
               {% endfor %}
             </h4>

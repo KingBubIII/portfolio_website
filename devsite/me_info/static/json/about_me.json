@@ -27,7 +27,8 @@
       ],
       "github": "https://github.com/KingBubIII/portfolio_website",
       "link": "/about-me",
-      "preview": null
+      "preview": null,
+      "id": 0
     },
     {
       "name": "Automated Personal Finance",
@@ -37,7 +38,8 @@
         "Python"
       ],
       "github": "https://github.com/KingBubIII/personal-finance-automated",
-      "link": null
+      "link": null,
+      "id": 1
     },
     {
       "name": "Steam Library Comparer",
@@ -49,7 +51,8 @@
         "SQL"
       ],
       "github": "https://github.com/KingBubIII/discordbotgamelib",
-      "link": null
+      "link": null,
+      "id": 2
     },
     {
       "name": "Single Player Racko",
@@ -60,7 +63,8 @@
         "Stack/ queue data structures"
       ],
       "github": "https://github.com/KingBubIII/discordbotgamelib",
-      "link": null
+      "link": null,
+      "id": 3
     }
   ],
   "work_history": [

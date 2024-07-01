@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{% static 'css/projects.css' %}">
 
 {% for project in projects_data %}
-  <div id="{{ project.index }}" class="card text-bg-success">
+  <div id="{{ project.id }}" class="card text-bg-success">
     <div class="row">
       <div class="col col-4">
         <img src="{{ project.preview }}" class="img-fluid rounded-start" alt="...">
