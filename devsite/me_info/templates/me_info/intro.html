@@ -6,14 +6,16 @@
 
 <div class="container">
   <div class="row">
-    <h1 class="about-me-headers">Introducing Me</h1>
-    <p>
-      my paragraph
-    </p>
+    <div class="card bg-success">
+      <div class="card-header"><h1 class="about-me-headers">Introducing Me</h1></div>
+      <div class="card-body">
+        <p>{{ description }}</p>
+      </div>
+    </div>
   </div>
   <br>
   <div class="row">
-    <div id="carouselExampleIndicators" class="carousel slide" style="width:450px; height:600px;">
+    <div id="carouselExampleIndicators" class="carousel slide" style="width:600px; height:800px;">
       <div class="carousel-inner">
         {% for image_path in image_paths %}
           {% if forloop.first %}
@@ -21,7 +23,7 @@
           {% else %}
             <div class="carousel-item">
           {% endif %}
-            <img src="{% static image_path %}" class="d-block w-100">
+            <img src="{% static image_path %}" class="d-block w-100" alt="{% static image_path %}">
           </div>
         {% endfor %}
       </div>
@@ -35,22 +37,31 @@
       </button>
     </div>
     <div class="col">
-      <h1 class="about-me-headers">Accomplishments</h1>
-        <ul>
-          <h4>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-          </h4>
-        </ul>
-      <h1 class="about-me-headers">Technical Skills</h1>
-        <ul>
-          <h4>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-          </h4>
-        </ul>
+      <div class="card bg-success">
+        <div class="card-header about-me-headers"><h1>Education</h1></div>
+        <div class="card-body">
+          <ul>
+            <h4>
+              {% for item in education %}
+                <li>{{ item }}</li>
+              {% endfor %}
+            </h4>
+          </ul>
+        </div>
+      </div>
+      <br>
+      <div class="card bg-success">
+        <div class="card-header about-me-headers"><h1>Accomplishments</h1></div>
+        <div class="card-body">
+          <ul>
+            <h4>
+              {% for accomplishment in accomplishments %}
+                <li>{{ accomplishment }}</li>
+              {% endfor %}
+            </h4>
+          </ul>
+        </div>
+      </div>
     </div>
 
   </div>

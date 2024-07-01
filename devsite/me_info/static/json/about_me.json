@@ -1,4 +1,22 @@
 {
+  "intro": {
+    "image_paths": [
+      "BahamasDrink.jpg",
+      "hiking_portrit.jpg",
+      "MagicCon.jpg",
+      "Skydiving.jpg",
+      "Snowboarding_selfie.jpg"
+    ],
+    "description": "Welcome to my portfolio, I am a Python developer getting started with making websites! I'm very committed to self-learning and self-improvement. Please check out my projects!",
+    "education": [
+      "Associate's degree in Computer Technology - Graduated May 2020",
+      "Went back to school and was on Dean's list of Spring 2022"
+    ],
+    "accomplishments": [
+      "Eagle Scout - Designed and built NYS Fireman facility for Green Tag Certification"
+    ],
+    "skills": []
+  },
   "projects": [
     {
       "name": "Portfolio/ Resume Website",
