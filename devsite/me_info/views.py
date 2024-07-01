@@ -12,6 +12,8 @@ def intro(request):
 
 def work_history(request):
     work_history_data = load(open(JSON_PATH + "about_me.json"))["work_history"]
+    for job_index in range(len(work_history_data)):
+        work_history_data[job_index]["company_image"] = MEDIA_URL+work_history_data[job_index]["company_image"]
     context = {"work_history_data": work_history_data}
     return render(request, "me_info\\work_history.html", context)
 
