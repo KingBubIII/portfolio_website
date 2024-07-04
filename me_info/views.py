@@ -12,7 +12,7 @@ def intro(request):
 
     context = {"intro_data": intro_data, "projects_data": projects_data}
 
-    return render(request, "me_info\\intro.html", context)
+    return render(request, "intro.html", context)
 
 def work_history(request):
     work_history_data = load(open(JSON_PATH + "about_me.json"))["work_history"]
@@ -22,9 +22,9 @@ def work_history(request):
     projects_data = load(open(JSON_PATH + "about_me.json"))["projects"]
 
     context = {"work_history_data": work_history_data, "projects_data": projects_data}
-    return render(request, "me_info\\work_history.html", context)
+    return render(request, "work_history.html", context)
 
 def projects(request):
     projects_data = load(open(JSON_PATH + "about_me.json"))["projects"]
     context = {"projects_data": projects_data}
-    return render(request, "me_info\\projects.html", context)
+    return render(request, "projects.html", context)
