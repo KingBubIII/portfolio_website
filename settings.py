@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-+)=qu@6y9@6co9u3&rhg1!8iw15a@j@6swoaq-@5y3uws9wb&5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [open('VM_IP_address.txt','r').readlines()[0]]
+ALLOWED_HOSTS = [open('VM_IP_address.txt','r').readlines()[0], "127.0.0.1", "www.calebrichardson.dev"]
 
 # Application definition
 
@@ -66,7 +66,7 @@ TEMPLATES = [
         },
     },
 ]
-WSGI_APPLICATION = 'mysite.wsgi.application'
+WSGI_APPLICATION = 'wsgi.application'
 
 
 # Database
