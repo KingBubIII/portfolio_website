@@ -4,18 +4,18 @@ Django settings
 
 import os
 from pathlib import Path
+from json import load
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
+SECRET_SAUCE = load(open('secret_sauce.json'))
 
-SECRET_KEY = 'django-insecure-+)=qu@6y9@6co9u3&rhg1!8iw15a@j@6swoaq-@5y3uws9wb&5'
+SECRET_KEY = SECRET_SAUCE["SECRET_KEY"]
 
 DEBUG = True
 
-ALLOWED_HOSTS = [open('VM_IP_address.txt','r').readlines()[0], "127.0.0.1", "www.calebrichardson.dev"]
+ALLOWED_HOSTS = [SECRET_SAUCE["VPS_IP_ADDRESS"], "127.0.0.1", "www.calebrichardson.dev"]
 
 # Application definition
 
