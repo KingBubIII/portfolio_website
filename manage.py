@@ -5,8 +5,7 @@ import sys
 from json import load
 
 def main():
-    ENVIRNMENT = load(open('secret_sauce.json','r'))["APP_ENV"]
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', f'{ENVIRNMENT}')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings')
 
     try:
         from django.core.management import execute_from_command_line

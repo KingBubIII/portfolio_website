@@ -5,17 +5,18 @@ Django settings
 import os
 from pathlib import Path
 from json import load
+import environ
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent
 
-SECRET_SAUCE = load(open('secret_sauce.json'))
+ENV = environ.Env()
+ENV.read_env()
 
-SECRET_KEY = SECRET_SAUCE["SECRET_KEY"]
+SECRET_KEY = ENV("SECRET_KEY")
 
 DEBUG = True
 
-ALLOWED_HOSTS = [SECRET_SAUCE["VPS_IP_ADDRESS"], "127.0.0.1", "www.calebrichardson.dev"]
+ALLOWED_HOSTS = [ENV("VPS_IP_ADDRESS"), "127.0.0.1", "www.calebrichardson.dev"]
 
 # Application definition
 
@@ -116,3 +117,11 @@ JSON_PATH = os.path.join(BASE_DIR, 'me_info', 'static', 'JSON', "")
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+if ENV("APP_ENV") == "development":
+    print("dev")
+    DEBUG = True
+
+if ENV("APP_ENV") == "production":
+    print("prod")
+    DEBUG = False

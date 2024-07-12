@@ -12,7 +12,6 @@ from json import load
 
 from django.core.wsgi import get_wsgi_application
 
-ENVIRNMENT = load(open('secret_sauce.json','r'))["APP_ENV"]
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', f'{ENVIRNMENT}')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings')
 
 application = get_wsgi_application()
