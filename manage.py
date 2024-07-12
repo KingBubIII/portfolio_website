@@ -2,10 +2,10 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-
+from json import load
 
 def main():
-    ENVIRNMENT = os.getenv("APP_ENV")
+    ENVIRNMENT = load(open('secret_sauce.json','r'))["APP_ENV"]
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', f'{ENVIRNMENT}')
 
     try:
