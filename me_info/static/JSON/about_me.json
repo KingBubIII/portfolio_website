@@ -1,0 +1,116 @@
+{
+  "intro": "Welcome to my website! I'm Caleb Richardson, a Python developer, avid self-learner and passionate for traveling. My journey in coding began right in high school and hasn't stopped. I specialize in Python, and I am looking to get my first programming job and start my career.\n\nOn this site, you'll find a showcase of my project portfolio with links and possibly deployed projects for an initial production environment. I'm always eager to connect with people, add to my portfolio, and my skills so feel free to connect with me on my socials.\n\nThank you for visiting!",
+  "education": [
+    {
+      "degree": "Associate's of Computer Technology",
+      "date": "Graduated May 2020",
+      "location": "SUNY Broome - Binghamton, NY",
+      "notable": "GPA 3.4"
+    }
+  ],
+  "self_learning": [
+    {
+      "name": "Udemy Courses",
+      "courses": [
+        "SQL",
+        "Sorting Algorithms"
+      ]
+    }
+  ],
+  "work_history": [
+    {
+      "title": "Software Technician I",
+      "dates": "September 2022 - Present",
+      "company": "Corning Inc",
+      "tasks": [
+        "Created programs to filter, retrive, and manipulate data from AVEVA PI Systems",
+        "Admistrative tasks on databases, such as resource and storage monitoring",
+        "Created complex, including dynamically created queries/ stored proceedures",
+        "Communicated with global team members and clients"
+      ]
+    },
+    {
+      "title": "Test Engineer",
+      "dates": "July 2021 - August 2022",
+      "company": "Southern Tier Technology",
+      "tasks": [
+        "Programmed new and modified existing functions for power monitoring functions such as surge, swell, and sag detection",
+        "Measured resistance and checked continuity of power monitoring panels",
+        "Soldering components together"
+      ]
+    },
+    {
+      "title": "Contract Engineer",
+      "dates": "September 2020 - June 2021",
+      "company": "Corning Inc",
+      "tasks": [
+        "Ground bond testing",
+        "Built maintenance decision matrix",
+        "Created app implimenting matrix for in person collected data"
+      ]
+    },
+    {
+      "title": "Intern",
+      "dates": "July 2018 - September 2018",
+      "company": "Lockheed Martin",
+      "tasks": [
+        "Create projects to show the Design Process",
+        "Created internal tool to show all available tools in workshop areas"
+      ]
+    }
+  ],
+  "me_images": [
+    "IMG/BahamasDrink.jpg",
+    "IMG/hiking_portrit.jpg",
+    "IMG/MagicCon.jpg",
+    "IMG/Skydiving.jpg",
+    "IMG/Snowboarding_selfie.jpg"
+  ],
+  "projects": [
+    {
+      "name": "Portfolio/ Resume Website",
+      "description": "This project is what you are seeing! It's this whole website dedicated to telling you about me and giving a place to show off my projects.",
+      "skills": [
+        "Python",
+        "HTMl"
+      ],
+      "github": "https://github.com/KingBubIII/portfolio_website",
+      "link": "/about-me",
+      "preview": null
+    },
+    {
+      "name": "Automated Personal Finance",
+      "description": "This project is for tracking my monthly expenses. It uses online bank's exported CSV files in combination with user defined rules to automatically put purchases into categories. This way you don't have to go through each transaction every month to categorize by hand.\n There is not a lot of customization for online budget trackers since they have predefined categorizes and their own way of automatically categoizing.",
+      "skills": [
+        "Python"
+      ],
+      "github": "https://github.com/KingBubIII/personal-finance-automated",
+      "link": null,
+      "preview": null
+    },
+    {
+      "name": "Steam Library Comparer",
+      "description": "This project is for people who use Steam and Discord and is for finding common games between two users. Ideally two people on Discord find eachother through a common server and want to play together and use my discord bot to find a common game between both of their Steam libraries.",
+      "skills": [
+        "Webscraping",
+        "Python",
+        "API",
+        "SQL"
+      ],
+      "github": "https://github.com/KingBubIII/discordbotgamelib",
+      "link": null,
+      "preview": null
+    },
+    {
+      "name": "Single Player Racko",
+      "description": "This project is meant to give me experiance with stacks and queues data structures beyond just example functions. This is a simple game that uses stacks and queue opperations to organize numbers.",
+      "skills": [
+        "Python",
+        "Data-Structures"
+      ],
+      "github": "https://github.com/KingBubIII/sp_racko",
+      "link": null,
+      "preview": null
+    }
+  ]
+}
