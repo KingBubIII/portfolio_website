@@ -5,7 +5,6 @@ from json import load
 def home(request):
     info_dict = load(open(settings.JSON_PATH + "about_me.json"))
     context = {}
-    print(info_dict)
     context["intro"] = info_dict["intro"]
     context["work_history"] = info_dict["work_history"]
     context["me_images"] = info_dict["me_images"]
