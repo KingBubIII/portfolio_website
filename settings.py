@@ -16,7 +16,7 @@ SECRET_KEY = ENV("SECRET_KEY")
 
 DEBUG = True
 
-ALLOWED_HOSTS = [ENV("VPS_IP_ADDRESS"), "127.0.0.1", "www.calebrichardson.dev"]
+ALLOWED_HOSTS = [ENV("VPS_IP_ADDRESS"), "127.0.0.1", "www.calebrichardson.dev", "calebrichardson.dev"]
 
 # Application definition
 
