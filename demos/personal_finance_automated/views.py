@@ -9,7 +9,7 @@ from settings import CSV_PATH
 def personal_finance_automated(request):
     context = {}
 
-    context["CSV"] = reader(open(CSV_PATH + "\\demo.csv"))
+    context["CSV"] = reader(open(CSV_PATH + "/demo.csv"))
 
     budget_forms = CategoryBudgetFormSet(
                                         initial = [
