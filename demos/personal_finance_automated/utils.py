@@ -1,9 +1,10 @@
 from csv import reader
+from settings import CSV_PATH
 
 def all_transactions_budgeted(budgets, rules):
     categories = {"Misc":0}
 
-    for line, transaction in enumerate(reader(open("demos\\personal_finance_automated\\static\\CSV\\demo.csv"))):
+    for line, transaction in enumerate(reader(open(CSV_PATH + "/demo.csv"))):
         if not line == 0:
 
             rule_match = False
