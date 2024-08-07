@@ -4,12 +4,12 @@ from csv import reader
 from io import StringIO
 from .forms import CategoryBudgetFormSet, CategoryRuleFormSet
 from .utils import all_transactions_budgeted
-from django.forms import formset_factory
+from settings import CSV_PATH
 
 def personal_finance_automated(request):
     context = {}
 
-    context["CSV"] = reader(open("demos\\personal_finance_automated\\static\\CSV\\demo.csv"))
+    context["CSV"] = reader(open(CSV_PATH + "\\demo.csv"))
 
     budget_forms = CategoryBudgetFormSet(
                                         initial = [

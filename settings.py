@@ -114,6 +114,7 @@ STATICFILES_DIRS = [
 ]
 MEDIA_URL = 'IMG/'
 JSON_PATH = os.path.join(BASE_DIR, 'me_info', 'static', 'JSON', "")
+CSV_PATH = os.path.join(BASE_DIR, "demos", "personal_finance_automated", "static", "CSV")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
