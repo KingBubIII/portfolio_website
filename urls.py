@@ -6,5 +6,6 @@ urlpatterns = [
     path("", views.route_to_home),
     path("about-me/", include("me_info.urls")),
     path('admin/', admin.site.urls),
+    path("personal_finance/", include("personal_finance.urls"))
 ]
 

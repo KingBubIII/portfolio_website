@@ -27,7 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "me_info"
+    "me_info",
+    "personal_finance"
 ]
 
 MIDDLEWARE = [
@@ -45,7 +46,7 @@ ROOT_URLCONF = 'urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'me_info', 'templates', 'me_info')],
+        'DIRS': [os.path.join(BASE_DIR, 'me_info', 'templates', 'me_info'), os.path.join(BASE_DIR, 'personal_finance', 'templates', 'personal_finance')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -109,6 +110,7 @@ STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'me_info/static'),
+    os.path.join(BASE_DIR, 'personal_finance/static'),
 ]
 MEDIA_URL = 'IMG/'
 JSON_PATH = os.path.join(BASE_DIR, 'me_info', 'static', 'JSON', "")

@@ -12,4 +12,5 @@ def home(request):
     context["self_learning"] = info_dict["self_learning"]
     context["projects"] = info_dict["projects"]
     context["all_skills"] = list(set([skill for project in context["projects"] for skill in project["skills"]]))
-    return render(request, 'home.html', context)
+    
+    return render(request, 'about_me_home.html', context)
