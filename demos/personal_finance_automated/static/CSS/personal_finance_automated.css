@@ -1,0 +1,24 @@
+section {
+    border: solid;
+    border-width: thin;
+    border-color: black;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+section div {
+    height: 300px;
+    overflow-y:auto;
+}
+input,
+select {
+    text-align: center;
+}
+
+.progress {
+    margin: 10px
+}
+.container {
+    margin: 0px;
+}

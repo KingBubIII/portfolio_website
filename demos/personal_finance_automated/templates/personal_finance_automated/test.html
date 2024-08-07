@@ -1,0 +1,8 @@
+
+
+{% for category_name, category_percent in categories.items %}
+<label for="{{ category_name }}">{{ category_name }} Budget:</label>
+<div class="progress" role="progressbar">
+  <div class="progress-bar {% if category_percent <= 100 %}bg-success{% elif category_percent > 100 %}bg-danger{% endif %}" style="width: {{ category_percent }}%"></div>
+</div>
+{% endfor %}
