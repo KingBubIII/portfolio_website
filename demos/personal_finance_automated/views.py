@@ -13,7 +13,7 @@ def personal_finance_automated(request):
 
     budget_forms = CategoryBudgetFormSet(
                                         initial = [
-                                                    {"name": "Rent", "amount": 1400},
+                                                    {"name": "Personal", "amount": 100},
                                                     {"name": "Groceries", "amount": 400},
                                                     {"name": "Subscriptions", "amount": 100},
                                                     {"name": "Custom 1", "amount": 0},
@@ -25,12 +25,12 @@ def personal_finance_automated(request):
     context["category_budgets"] = budget_forms
 
     rule_forms = CategoryRuleFormSet(initial = [
-                                                    {"category": "Rent", "low_limit": -15, "upper_limit":-100, "text_match":"*"},
-                                                    {"category": "Rent", "low_limit": -15, "upper_limit":-100, "text_match":"*"},
-                                                    {"category": "Rent", "low_limit": -15, "upper_limit":-100, "text_match":"*"},
-                                                    {"category": "Rent", "low_limit": -15, "upper_limit":-100, "text_match":"*"},
-                                                    {"category": "Rent", "low_limit": -15, "upper_limit":-100, "text_match":"*"},
-                                                    {"category": "Rent", "low_limit": -15, "upper_limit":-100, "text_match":"*"},
+                                                    {"category": "Groceries", "low_limit": -15, "upper_limit":-100, "text_match":"WAL"},
+                                                    {"category": "Subscriptions", "low_limit": 0, "upper_limit":-25, "text_match":"Spotify"},
+                                                    {"category": "Personal", "low_limit": 0, "upper_limit":-100, "text_match":"STEAMGAMES"},
+                                                    {"category": "Personal", "low_limit": 0, "upper_limit":-100, "text_match":"AMZN"},
+                                                    {"category": "Pick a Category", "low_limit": 0, "upper_limit":-100000, "text_match":""},
+                                                    {"category": "Pick a Category", "low_limit": 0, "upper_limit":-100000, "text_match":""},
                                                 ],
                                     prefix='rule'
                                     )

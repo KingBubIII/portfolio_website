@@ -29,7 +29,7 @@
               </table>
             </div>
           </section>
-          <form hx-post="recalculate/" hx-target="#progress_bars" hx-trigger="submit, load" >
+          <form hx-post="recalculate/" hx-target="#progress_bars" hx-trigger="load, change delay:500ms">
             {% csrf_token %}
             <section class="step">
               <h1>Step 2: Set Budget Categories</h1>
@@ -81,7 +81,6 @@
                 </table>
               </div>
             </section>
-            <input type="submit" value="submit">
           </form>
         </div>
 
