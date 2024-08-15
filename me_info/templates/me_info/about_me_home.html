@@ -63,7 +63,7 @@
         <div class="container" data-aos="fade-up" data-aos-delay="100">
           <div class="row gy-4">
             <div class="col-md-6">
-              <div id="carouselExampleIndicators" class="carousel slide">
+              <div id="carousel Indicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   {% for image_path in me_images %}
                     {% if forloop.first %}
@@ -71,7 +71,7 @@
                     {% else %}
                       <div class="carousel-item">
                     {% endif %}
-                      <img src="{% static image_path %}" class="w-75" alt="{% static image_path %}">
+                      <img src="{% static image_path %}" class="carousel-image" alt="{% static image_path %}">
                     </div>
                   {% endfor %}
                 </div>
