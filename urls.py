@@ -5,7 +5,6 @@ import views
 urlpatterns = [
     path("", views.route_to_home),
     path("about-me/", include("me_info.urls")),
-    path('admin/', admin.site.urls),
-    path("demos/", include("demos.urls"))
+    path("admin/", admin.site.urls),
+    path("demos/", include("demos.urls")),
 ]
-

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.conf import settings
 from json import load
 
+
 def home(request):
     info_dict = load(open(settings.JSON_PATH + "about_me.json"))
     context = {}
@@ -11,6 +12,8 @@ def home(request):
     context["education"] = info_dict["education"]
     context["self_learning"] = info_dict["self_learning"]
     context["projects"] = info_dict["projects"]
-    context["all_skills"] = list(set([skill for project in context["projects"] for skill in project["skills"]]))
-    
-    return render(request, 'about_me_home.html', context)
+    context["all_skills"] = list(
+        set([skill for project in context["projects"] for skill in project["skills"]])
+    )
+
+    return render(request, "about_me_home.html", context)
