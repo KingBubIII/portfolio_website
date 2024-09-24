@@ -111,6 +111,18 @@
       "github": "https://github.com/KingBubIII/sp_racko",
       "link": null,
       "preview": null
+    },
+    {
+      "name": "Favorites API",
+      "description": "I wrote a basic RESTful API that shows some of my favorite media like movies or TV shows. You can use my documentation in order to query specifics and or filter.",
+      "skills": [
+        "Python",
+        "API",
+        "Documentation"
+      ],
+      "github": "https://github.com/KingBubIII/favorites_API",
+      "link": "docs.calebrichardson.dev/favorites_API/",
+      "preview": null
     }
   ]
 }
