@@ -7,4 +7,5 @@ urlpatterns = [
     path("about-me/", include("me_info.urls")),
     path("admin/", admin.site.urls),
     path("demos/", include("demos.urls")),
+    path("click/", views.click),
 ]

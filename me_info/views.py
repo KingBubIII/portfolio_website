@@ -5,15 +5,17 @@ from json import load
 
 def home(request):
     info_dict = load(open(settings.JSON_PATH + "about_me.json"))
-    context = {}
-    context["intro"] = info_dict["intro"]
-    context["work_history"] = info_dict["work_history"]
-    context["me_images"] = info_dict["me_images"]
-    context["education"] = info_dict["education"]
-    context["self_learning"] = info_dict["self_learning"]
-    context["projects"] = info_dict["projects"]
-    context["all_skills"] = list(
-        set([skill for project in context["projects"] for skill in project["skills"]])
+
+    info_dict["all_skills"] = list(
+        set([skill for project in info_dict["projects"] for skill in project["skills"]])
     )
 
-    return render(request, "about_me_home.html", context)
+    if request.session.has_key("hidden_buttons_found"):
+        print("found")
+        info_dict["buttons_found"] = len(request.session["hidden_buttons_found"])
+    else:
+        print("not found")
+        request.session["hidden_buttons_found"] = []
+        info_dict["buttons_found"] = 0
+
+    return render(request, "about_me_home.html", info_dict)

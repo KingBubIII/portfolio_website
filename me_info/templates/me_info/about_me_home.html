@@ -27,6 +27,8 @@
 
   <!-- Main CSS File -->
   <link href="{% static 'CSS/main.css' %}" rel="stylesheet">
+
+  <script src="https://unpkg.com/htmx.org@2.0.2" integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ" crossorigin="anonymous"></script>
 </head>
 
 <body class="index-page">
@@ -37,6 +39,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#resume">Resume</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#" hx-get="/click?id=0" hx-target="#buttons-found" hx-swap="innerHTML"> </a></li>
         {% comment %} <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
             <li><a href="#">Dropdown 1</a></li>
@@ -54,148 +57,158 @@
     </div>
   </header>
 
-  <main class="main">
-    <!-- About Section -->
-    <section id="about" class="about section">
-      <h2>About me</h2>
-      <div class="section-title">
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row gy-4">
-            <div class="col-md-6">
-              <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  {% for image_path in me_images %}
-                    {% if forloop.first %}
-                      <div class="carousel-item active">
-                    {% else %}
-                      <div class="carousel-item">
-                    {% endif %}
-                      <img src="{% static image_path %}" class="carousel-image" alt="{% static image_path %}">
-                    </div>
-                  {% endfor %}
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <p>{{ intro|linebreaksbr }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- /About Section -->
-
-    <!-- Resume Section -->
-    <section id="resume" class="resume section">
-      <h2>Resume</h2>
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-              <h3 class="resume-title">Education</h3>
-              {% for item in education %}
-                <div class="resume-item">
-                  <h4>{{ item.degree }}</h4>
-                  <h5>{{ item.date }}</h5>
-                  <p><em>{{ item.location }}</em></p>
-                  <p>{{ item.notable }}</p>
-                </div><!-- Edn Resume Item -->
-              {% endfor %}
-
-              <h3 class="resume-title">Self Learning</h3>
-              {% for place in self_learning %}
-              <div class="resume-item pb-0">
-                <h4>{{ place.name }}</h4>
-                <ul>
-                  {% for topic in place.courses %}
-                    <li>{{ topic }}</li>
-                  {% endfor %}
-                </ul>
-              </div><!-- Edn Resume Item -->
-              {% endfor %}
-            </div>
-
-            <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
-              <h3 class="resume-title">Professional Experience</h3>
-              {% for job in work_history %}
-              <div class="resume-item">
-                <h4>{{ job.title }}</h4>
-                <h5>{{ job.dates }}</h5>
-                <p><em>{{ job.company }}</em></p>
-                <ul>
-                  {% for task in job.tasks %}
-                  <li>{{ task }}</li>
-                  {% endfor %}
-                </ul>
-              </div><!-- Edn Resume Item -->
-              {% endfor %}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- /Resume Section -->
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-
-        <div class="container">
-
-          <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-            <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-              <li data-filter="*" class="filter-active">All</li>
-              {% for skill in all_skills %}
-                <li data-filter=".filter-{{ skill }}">{{ skill }}</li>
-              {% endfor%}
-            </ul><!-- End Portfolio Filters -->
-            <div class="portfolio-area">
-              <div class="isotope-container" data-aos="fade-up" data-aos-delay="200">
-                {% for project in projects %}
-                  <div class="portfolio-item isotope-item {% for skill in project.skills %}filter-{{ skill }} {% endfor %}">
-                    <div class="container ">
-                      <div class="row">
-                        <div class="col">
-                          <h4>{{ project.name }}</h4>
-                          <p>{{ project.description }}</p>
+  <div class="container-fluid">
+    <div class="row">
+      <main class="col col-10 main">
+        <div class="content">
+            <!-- About Section -->
+            <section id="about" class="about section">
+              <h2>About me</h2>
+              <div class="section-title">
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <div class="row">
+                    <div class="col col-5">
+                      <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                          {% for image_path in me_images %}
+                            {% if forloop.first %}
+                              <div class="carousel-item img-fluid active">
+                            {% else %}
+                              <div class="carousel-item img-fluid">
+                            {% endif %}
+                              <img src="{% static image_path %}" class="carousel-image w-100" alt="{% static image_path %}">
+                            </div>
+                          {% endfor %}
                         </div>
-                        <div class="col col-md-auto align-self-center">
-                          <div class="vstack gap-3">
-                            {% if project.preview %}
-                              <a href="{% static project.preview %}" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                            {% endif %}
-                            {% if project.github %}
-                              <a href="{{ project.github }}" title="GitHub Link" class="details-link"><i class="bi bi-github"></i></a>
-                            {% endif %}
-                            {% if project.link %}
-                              <a href="{{ project.link }}" title="Production link" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                            {% endif %}
-                          </div>
-                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
                       </div>
                     </div>
-                  </div><!-- End Portfolio Item -->
-                {% endfor %}
-              </div><!-- End Portfolio Container -->
-            </div>
+                    <div class="col-7">
+                      <p>{{ intro|linebreaksbr }}</p>
+                    </div>
+                  </div>
+                  <a href="#" hx-get="/click?id=1" hx-target="#buttons-found" hx-swap="innerHTML"> </a>
+                </div>
+              </div>
+            </section><!-- /About Section -->
+            <a href="#" hx-get="/click?id=2" hx-target="#buttons-found" hx-swap="innerHTML"> </a>
+            <!-- Resume Section -->
+            <section id="resume" class="resume section">
+              <h2>Resume</h2>
+              <!-- Section Title -->
+              <div class="container section-title" data-aos="fade-up">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                      <h3 class="resume-title">Education</h3>
+                      {% for item in education %}
+                        <div class="resume-item">
+                          <h4>{{ item.degree }}</h4>
+                          <h5>{{ item.date }}</h5>
+                          <p><em>{{ item.location }}</em></p>
+                          <p>{{ item.notable }}</p>
+                        </div><!-- Edn Resume Item -->
+                      {% endfor %}
+                      <h3 class="resume-title">Self Learning<a href="#" hx-get="/click?id=3" hx-target="#buttons-found" hx-swap="innerHTML"> </a></h3>
+                      {% for place in self_learning %}
+                      <div class="resume-item pb-0">
+                        <h4>{{ place.name }}</h4>
+                        <ul>
+                          {% for topic in place.courses %}
+                            <li>{{ topic }}</li>
+                          {% endfor %}
+                        </ul>
+                      </div><!-- Edn Resume Item -->
+                      {% endfor %}
+                    </div>
+                    <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+                      <h3 class="resume-title">Professional Experience</h3>
+                      {% for job in work_history %}
+                      <div class="resume-item">
+                        <h4>{{ job.title }}{% if forloop.first %}<a href="#" hx-get="/click?id=4" hx-target="#buttons-found" hx-swap="innerHTML"> </a>{% endif %}</h4>
+                        <h5>{{ job.dates }}</h5>
+                        <p><em>{{ job.company }}</em></p>
+                        <ul>
+                          {% for task in job.tasks %}
+                          <li>{{ task }}</li>
+                          {% endfor %}
+                        </ul>
+                      </div><!-- Edn Resume Item -->
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section><!-- /Resume Section -->
+            <!-- Portfolio Section -->
+            <section id="portfolio" class="portfolio section">
+              <!-- Section Title -->
+              <div class="container section-title" data-aos="fade-up">
+                <h2>Portfolio</h2>
+                <div class="container">
+                  <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+                    <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+                      <li data-filter="*" class="filter-active">All</li>
+                      {% for skill in all_skills %}
+                        <li data-filter=".filter-{{ skill }}">{{ skill }}</li>
+                      {% endfor%}
+                      <li><a href="#" hx-get="/click?id=5" hx-target="#buttons-found" hx-swap="innerHTML"> </a></li>
+                    </ul><!-- End Portfolio Filters -->
+                    <div class="portfolio-area">
+                      <div class="isotope-container" data-aos="fade-up" data-aos-delay="200">
+                        {% for project in projects %}
+                          <div class="portfolio-item isotope-item {% for skill in project.skills %}filter-{{ skill }} {% endfor %}">
+                            <div class="container ">
+                              <div class="row">
+                                <div class="col">
+                                  <h4>{{ project.name }}</h4>
+                                  <p>{{ project.description }}</p>
+                                </div>
+                                <div class="col col-md-auto align-self-center">
+                                  <div class="vstack gap-3">
+                                    {% if project.preview %}
+                                      <a href="{% static project.preview %}" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                    {% endif %}
+                                    {% if project.github %}
+                                      <a href="{{ project.github }}" title="GitHub Link" class="details-link"><i class="bi bi-github"></i></a>
+                                    {% endif %}
+                                    {% if project.link %}
+                                      <a href="{{ project.link }}" title="Production link" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                                    {% endif %}
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div><!-- End Portfolio Item -->
+                        {% endfor %}
+                      </div><!-- End Portfolio Container -->
+                      <a href="#" hx-get="/click?id=6" hx-target="#buttons-found" hx-swap="innerHTML"> </a>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End Section Title -->
+            </section><!-- /Portfolio Section -->
+        </div>
+      </main>
+
+      <div class="col mini-games">
+        <div class="card mini-game">
+          <div class="card-header text-bg-primary">Find all hidden buttons</div>
+          <div class="card-body">
+            <h5 class="card-title">Buttons found: <span id="buttons-found">{{ buttons_found }}/8</span></h5>
+            <p class="card-subtitle">Something like this -> <a href="#" hx-get="/click?id=7" hx-target="#buttons-found" hx-swap="innerHTML"> </a></p>
           </div>
         </div>
-      </div><!-- End Section Title -->
-    </section><!-- /Portfolio Section -->
-
-  </main>
+      </div>
+    </div>
+  </div>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

@@ -21,6 +21,7 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "www.calebrichardson.dev",
     "calebrichardson.dev",
+    "localhost",
 ]
 
 # Application definition
@@ -132,8 +133,10 @@ CSV_PATH = os.path.join(
     BASE_DIR, "demos", "personal_finance_automated", "static", "CSV"
 )
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+SESSION_SAVE_EVERY_REQUEST = True
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+# session age lasts for 12 hours
+SESSION_COOKIE_AGE = 43200
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
