@@ -11,10 +11,8 @@ def home(request):
     )
 
     if request.session.has_key("hidden_buttons_found"):
-        print("found")
         info_dict["buttons_found"] = len(request.session["hidden_buttons_found"])
     else:
-        print("not found")
         request.session["hidden_buttons_found"] = []
         info_dict["buttons_found"] = 0
 
