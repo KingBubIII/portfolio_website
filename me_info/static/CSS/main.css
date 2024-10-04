@@ -993,7 +993,8 @@ section h2:after {
 }
 
 .portfolio .portfolio-item .preview-link,
-.portfolio .portfolio-item .details-link {
+.portfolio .portfolio-item .details-link,
+.legend .details-link{
   font-size: 24px;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
@@ -1471,4 +1472,12 @@ section h2:after {
 .mini-game {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.legend {
+  margin: 10px;
+}
+
+.legend .details-link {
+  margin-left: 15px;
 }
