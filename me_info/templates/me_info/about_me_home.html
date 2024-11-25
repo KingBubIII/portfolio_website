@@ -106,28 +106,6 @@
               <div class="container section-title" data-aos="fade-up">
                 <div class="container">
                   <div class="row">
-                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                      <h3 class="resume-title">Education</h3>
-                      {% for item in education %}
-                        <div class="resume-item">
-                          <h4>{{ item.degree }}</h4>
-                          <h5>{{ item.date }}</h5>
-                          <p><em>{{ item.location }}</em></p>
-                          <p>{{ item.notable }}</p>
-                        </div><!-- Edn Resume Item -->
-                      {% endfor %}
-                      <h3 class="resume-title">Self Learning<a href="#" hx-get="/click?id=3" hx-target="#buttons-found" hx-swap="innerHTML"> </a></h3>
-                      {% for place in self_learning %}
-                      <div class="resume-item pb-0">
-                        <h4>{{ place.name }}</h4>
-                        <ul>
-                          {% for topic in place.courses %}
-                            <li>{{ topic }}</li>
-                          {% endfor %}
-                        </ul>
-                      </div><!-- Edn Resume Item -->
-                      {% endfor %}
-                    </div>
                     <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="resume-title">Professional Experience</h3>
                       {% for job in work_history %}
@@ -143,6 +121,30 @@
                       </div><!-- Edn Resume Item -->
                       {% endfor %}
                     </div>
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                      <h3 class="resume-title">Self Learning<a href="#" hx-get="/click?id=3" hx-target="#buttons-found" hx-swap="innerHTML"> </a></h3>
+                      {% for place in self_learning %}
+                      <div class="resume-item pb-0">
+                        <h4>{{ place.name }}</h4>
+                        <ul>
+                          {% for topic in place.courses %}
+                            <li>{{ topic }}</li>
+                          {% endfor %}
+                        </ul>
+                      </div><!-- Edn Resume Item -->
+                      <h3 class="resume-title">Education</h3>
+                      {% for item in education %}
+                        <div class="resume-item">
+                          <h4>{{ item.degree }}</h4>
+                          <h5>{{ item.date }}</h5>
+                          <p><em>{{ item.location }}</em></p>
+                          <p>{{ item.notable }}</p>
+                        </div><!-- Edn Resume Item -->
+                      {% endfor %}
+
+                      {% endfor %}
+                    </div>
+
                   </div>
                 </div>
               </div>

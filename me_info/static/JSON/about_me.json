@@ -12,6 +12,8 @@
     {
       "name": "Udemy Courses",
       "courses": [
+        "Python",
+        "C/C++",
         "SQL",
         "Sorting Algorithms"
       ]
@@ -20,13 +22,13 @@
   "work_history": [
     {
       "title": "Software Technician I",
-      "dates": "September 2022 - Present",
+      "dates": "September 2022 - July 2024",
       "company": "Corning Inc",
       "tasks": [
-        "Created programs to filter, retrive, and manipulate data from AVEVA PI Systems",
-        "Admistrative tasks on databases, such as resource and storage monitoring",
-        "Created complex, including dynamically created queries/ stored proceedures",
-        "Communicated with global team members and clients"
+        "Developed and completed a control loop monitoring dashboard system, taking it from a proof of concept to full deployment across multiple lines in a manufacturing plant",
+        "Self-taught, after original developer left, to become a trusted resource in VisualKPI and integration with AVEVA PI System and Microsoft SQL data",
+        "Was a lead developer for integration work on a small team of four that used Agile Development methodology",
+        "    Tech: AVEVA PI System, VisualKPI, Microsoft SQL scripting, and database management"
       ]
     },
     {
@@ -34,9 +36,10 @@
       "dates": "July 2021 - August 2022",
       "company": "Southern Tier Technology",
       "tasks": [
-        "Programmed new and modified existing functions for power monitoring functions such as surge, swell, and sag detection",
-        "Measured resistance and checked continuity of power monitoring panels",
-        "Soldering components together"
+        "Tested all power monitoring units for full functionality prior to shipment, ensuring quality control and compliance with standards",
+        "Created documentation for unit testing procedures and training materials for new team members",
+        "Created and modified functions on PIC18F processor for power analysis detection like surges, swells, and sags",
+        "Tech: PICkit3, Oscilloscope, Multimeter, C/ C++"
       ]
     },
     {
@@ -44,9 +47,9 @@
       "dates": "September 2020 - June 2021",
       "company": "Corning Inc",
       "tasks": [
-        "Ground bond testing",
-        "Built maintenance decision matrix",
-        "Created app implimenting matrix for in person collected data"
+        "Proactively developed an application (VBA) that collected data on manufacturing equipment and referenced maintenance & prioritization matrix to give an overall status",
+        "Assisted creating maintenance & prioritization matrix using maintenance records and direct observation",
+        "Presented data collected, over 100 pieces of equipment, to plant stakeholders"
       ]
     },
     {
