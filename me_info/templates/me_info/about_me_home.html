@@ -25,15 +25,15 @@
   <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
   <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
-  <!-- Main CSS File -->
-  <link href="{% static 'CSS/main.css' %}" rel="stylesheet">
+  <!-- CSS File -->
+  <link href="{% static 'CSS/combined.css' %}" rel="stylesheet">
 
   <script src="https://unpkg.com/htmx.org@2.0.2" integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ" crossorigin="anonymous"></script>
 </head>
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex sticky-top">
+  <header id="header" class="d-flex sticky-top">
     <nav id="navmenu" class="navmenu col">
       <ul>
         <li><a href="#about">About</a></li>
@@ -62,7 +62,7 @@
       <main class="col col-10 main">
         <div class="content">
             <!-- About Section -->
-            <section id="about" class="about section">
+            <section id="about" class="about">
               <h2>About me</h2>
               <div class="section-title">
                 <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -100,7 +100,7 @@
             </section><!-- /About Section -->
             <a href="#" hx-get="/click?id=2" hx-target="#buttons-found" hx-swap="innerHTML"> </a>
             <!-- Resume Section -->
-            <section id="resume" class="resume section">
+            <section id="resume" class="resume">
               <h2>Resume</h2>
               <!-- Section Title -->
               <div class="container section-title" data-aos="fade-up">
@@ -150,7 +150,7 @@
               </div>
             </section><!-- /Resume Section -->
             <!-- Portfolio Section -->
-            <section id="portfolio" class="portfolio section">
+            <section id="portfolio" class="portfolio">
               <!-- Section Title -->
               <div class="container section-title" data-aos="fade-up">
                 <h2>Portfolio</h2>
