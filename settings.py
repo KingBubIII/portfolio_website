@@ -53,14 +53,9 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            os.path.join(BASE_DIR, "me_info", "templates", "me_info"),
-            os.path.join(
-                BASE_DIR,
-                "demos",
-                "personal_finance_automated",
-                "templates",
-                "personal_finance_automated",
-            ),
+                    os.path.join(BASE_DIR, "templates/portfolio_website/"),
+                    os.path.join(BASE_DIR, "me_info/templates/me_info/"),
+                    os.path.join(BASE_DIR, "demos/personal_finance_automated/templates/personal_finance_automated/"),
         ],
         "APP_DIRS": True,
         "OPTIONS": {
