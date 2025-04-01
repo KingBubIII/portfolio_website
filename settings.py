@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "me_info",
     "demos.personal_finance_automated",
+    "printing"
 ]
 
 MIDDLEWARE = [
@@ -56,6 +57,7 @@ TEMPLATES = [
                     os.path.join(BASE_DIR, "templates/portfolio_website/"),
                     os.path.join(BASE_DIR, "me_info/templates/me_info/"),
                     os.path.join(BASE_DIR, "demos/personal_finance_automated/templates/personal_finance_automated/"),
+                    os.path.join(BASE_DIR, "printing/templates/printing/")
         ],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -129,6 +131,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "me_info/static"),
     os.path.join(BASE_DIR, "demos/personal_finance_automated/static"),
+    os.path.join(BASE_DIR, "printing/static")
 ]
 MEDIA_URL = "IMG/"
 JSON_PATH = os.path.join(BASE_DIR, "me_info", "static", "JSON", "")

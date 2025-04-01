@@ -8,4 +8,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("demos/", include("demos.urls")),
     path("click/", views.click),
+    path("printing/", include("printing.urls"))
 ]
