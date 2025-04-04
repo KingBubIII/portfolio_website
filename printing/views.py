@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.conf import settings
 from json import load
 import smtplib, ssl
 from email.message import EmailMessage
 import environ
 from .forms import EmailContact
+from json import load
 
 def printingHome(request):
 
@@ -14,7 +16,7 @@ def printingHome(request):
     try:
         request.session["email_sent"]
     except KeyError as e:
-        request.session["email_sent"] = False
+        request.session["email_sent"] = None
 
     try:
         request.session["email_form"]
@@ -26,7 +28,13 @@ def printingHome(request):
                                             "message": ""
                                         }
 
-    context = {"email_sent": request.session["email_sent"], "email_form": request.session["email_form"]}
+    printing_info = load(open(str(settings.BASE_DIR) + "\\printing\\static\\JSON\\about_printing.json"))
+
+    context = {"email_sent": request.session["email_sent"],
+                "email_form": request.session["email_form"],
+                "printing_img_paths": printing_info["printing_images"],
+                "intro": printing_info["intro"]}
+
     return render(request, "printing_home.html", context)
 
 def sendEmail(request):
@@ -69,4 +77,6 @@ def sendEmail(request):
                                                 "budget": contact_form.cleaned_data.get("budget"),
                                                 "message": contact_form.cleaned_data.get("message")
                                             }
-            return redirect("3d-printing-home")
+
+            temp_url = reverse("3d-printing-home")
+            return redirect(temp_url+"#email-form")

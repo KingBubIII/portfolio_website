@@ -22,11 +22,47 @@
     <title>Contact Form #9</title>
   </head>
   <body>
-
-
-  <div class="content">
-
     <div class="container">
+      <div class="row align-items-stretch no-gutters contact-wrap about">
+        <div class="col-md-12">
+          <div class="form h-100">
+            <h3>About Caleb 3D Prints!</h3>
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+              <div class="row">
+                <div class="col-5 mobile-sized">
+                  <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      {% for image_path in printing_img_paths %}
+                        {% if forloop.first %}
+                          <div class="carousel-item img-fluid active">
+                        {% else %}
+                          <div class="carousel-item img-fluid">
+                        {% endif %}
+                          <img src="{% static image_path %}" class="carousel-image w-100" alt="{% static image_path %}">
+                        </div>
+                      {% endfor %}
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-7 mobile-sized ">
+                  <p>{{ intro|linebreaksbr }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="email-form" class="container">
       <div class="row align-items-stretch no-gutters contact-wrap">
         <div class="col-md-12">
           <div class="form h-100">
@@ -70,28 +106,17 @@
               </div>
             </form>
 
-            {% if email_sent %}
+            {% if email_sent is True %}
             <div>
               Your message was sent, thank you!
             </div>
-            {% else %}
-              Some fields were not filled out corretly, please try again!
+            {% elif email_sent is False %}
+              Some fields were not filled out correctly, please try again!
             {% endif %}
           </div>
         </div>
       </div>
     </div>
-
-  </div>
-
-
-
-    <script src="{% static 'JS/jquery-3.3.1.min.js' %}"></script>
-    <script src="{% static 'JS/popper.min.js' %}"></script>
-    <script src="{% static 'JS/bootstrap.min.js' %}"></script>
-    <script src="{% static 'JS/jquery.validate.min.js' %}"></script>
-    <script src="{% static 'JS/main.js' %}"></script>
-
   </body>
 </html>
 {% endblock %}
