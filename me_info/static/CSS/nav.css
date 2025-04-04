@@ -130,6 +130,10 @@
         left: -100%;
         visibility: visible;
     }
+
+    .navmenu .dropdown span {
+        color: #0d6efd;
+    }
 }
 
 /* Mobile Navigation */

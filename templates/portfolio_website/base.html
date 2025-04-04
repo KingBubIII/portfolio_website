@@ -35,18 +35,18 @@
   <header id="header" class="d-flex sticky-top">
     <nav id="navmenu" class="navmenu col">
       <ul>
-        {% for key, value in section_scrollers.items%}
-        <li><a href="#{{ key }}">{{ value }}</a></li>
-        {% endfor %}
-        <li><a href="#" hx-get="/click?id=0" hx-target="#buttons-found" hx-swap="innerHTML"> </a></li>
-        {% comment %} <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+        <li class="dropdown"><a href="#"><span>Explore my Page</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
-            <li><a href="#">Dropdown 1</a></li>
-            <li><a href="#">Dropdown 2</a></li>
-            <li><a href="#">Dropdown 3</a></li>
-            <li><a href="#">Dropdown 4</a></li>
+            <li><a href="/printing/">Caleb 3D Prints</a></li>
+            <li><a href="/about-me/">About Me</a></li>
+            {% comment %} <li><a href="#">Dropdown 3</a></li>
+            <li><a href="#">Dropdown 4</a></li> {% endcomment %}
           </ul>
-        </li> {% endcomment %}
+        </li>
+        {% for key, value in section_scrollers.items%}
+        <li class="test"><a href="#{{ key }}">{{ value }}</a></li>
+        {% endfor %}
+        <li class="test"><a href="#" hx-get="/click?id=0" hx-target="#buttons-found" hx-swap="innerHTML"> </a></li>
       </ul>
     </nav>
 
