@@ -1,4 +1,7 @@
 {
+  "section_scrollers": {"about":"About",
+                        "resume":"Resume",
+                        "portfolio":"Portfolio"},
   "intro": "Welcome to my website and thank you for visiting! I'm Caleb Richardson, a dedicated Python developer and avid self-learner with a passion for traveling. My coding journey began in high school and has continued to grow ever since. I specialize in Python and am excited to grow in my programming career.\n\nOn this site, you'll find a showcase of my project portfolio, complete with links to deployed projects and initial production environments. I am always ready and eager to connect with others, expand my portfolio, and enhance my skills. Please feel free to reach out to me on any listed social media platforms.",
   "education": [
     {

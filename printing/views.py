@@ -34,7 +34,8 @@ def printingHome(request):
     context = {"email_sent": request.session["email_sent"],
                 "email_form": request.session["email_form"],
                 "printing_img_paths": printing_info["printing_images"],
-                "intro": printing_info["intro"]}
+                "intro": printing_info["intro"],
+                "section_scrollers": printing_info["section_scrollers"]}
 
     return render(request, "printing_home.html", context)
 
