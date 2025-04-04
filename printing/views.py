@@ -2,8 +2,9 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.conf import settings
 from json import load
-import smtplib, ssl
-from email.message import EmailMessage
+from django.core.mail import EmailMultiAlternatives, EmailMessage
+from django.shortcuts import render
+from django.http import HttpResponse
 import environ
 from .forms import EmailContact
 from json import load
@@ -39,32 +40,32 @@ def printingHome(request):
 
 def sendEmail(request):
     if request.method == "POST":
+        print(request.FILES)
         # put form data into class to be extracted
-        contact_form = EmailContact(request.POST)
+        contact_form = EmailContact(request.POST, request.FILES)
         if contact_form.is_valid():
-            # build email obj
-            email_msg = EmailMessage()
-            email_msg.set_content(contact_form.cleaned_data.get("message") + contact_form.cleaned_data.get("budget"))
-            email_msg["Subject"] = f"3D Print Inquiry - {contact_form.cleaned_data["name"]}"
-            email_msg["From"]= "calebskingdombusiness@gmail.com"
-            email_msg["To"] = contact_form.cleaned_data["email"]
-
-            context=ssl.create_default_context()
+            print(contact_form.cleaned_data)
             env = environ.Env()
             env.read_env()
+            # build email obj
+            email_msg = EmailMessage(subject= f"3D Print Inquiry - {contact_form.cleaned_data["name"]}",
+                                                body= contact_form.cleaned_data.get("message") + contact_form.cleaned_data.get("budget"),
+                                                from_email= env("FROM_EMAIL"),
+                                                to= [contact_form.cleaned_data["email"]],
+                                                bcc=[env("BCC_EMAIL")]
+                                                )
+            # get file user uploaded
+            uploaded_file = contact_form.cleaned_data["user_model"]
+            # attach to email
+            email_msg.attach(uploaded_file.name, uploaded_file.read(), uploaded_file.content_type)
+            # send email to user and myself bcc
+            email_msg.send()
 
-            # create SMTP instance
-            with smtplib.SMTP("smtp.gmail.com", port=587) as s:
-                s.starttls(context=context)
-                # login using email and "app password"
-                s.login(email_msg["From"], env("EMAIL_APP_PASS"))
-                # send email with a bcc to my personal email
-                s.sendmail(from_addr=email_msg["From"],
-                            to_addrs=[email_msg["To"], env("BCC_EMAIL")],
-                            msg=email_msg.as_string())
-            # return home with a message about it being sent successfully
             request.session["email_sent"]= True
-            return redirect("3d-printing-home")
+            request.session["email_form"] = {}
+
+            temp_url = reverse("3d-printing-home")
+            return redirect(temp_url+"#email-form")
         else:
             print(contact_form.errors)
 

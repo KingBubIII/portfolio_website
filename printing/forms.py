@@ -8,3 +8,4 @@ class EmailContact(forms.Form):
                                         "$100+": "$100+"},
                                 required=True)
     message = forms.CharField(required=True)
+    user_model = forms.FileField(required=False)

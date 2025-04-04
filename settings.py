@@ -146,6 +146,12 @@ SESSION_COOKIE_AGE = 43200
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = ENV("FROM_EMAIL")
+EMAIL_HOST_PASSWORD = ENV("EMAIL_APP_PASS")
+
 if ENV("APP_ENV") == "development":
     print("dev")
     DEBUG = True
