@@ -29,7 +29,7 @@ def printingHome(request):
                                             "message": ""
                                         }
 
-    printing_info = load(open(str(settings.BASE_DIR) + "\\printing\\static\\JSON\\about_printing.json"))
+    printing_info = load(open(str(settings.BASE_DIR) + "/printing/static/JSON/about_printing.json"))
 
     context = {"email_sent": request.session["email_sent"],
                 "email_form": request.session["email_form"],
