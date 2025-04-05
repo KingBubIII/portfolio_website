@@ -48,9 +48,12 @@ def sendEmail(request):
             print(contact_form.cleaned_data)
             env = environ.Env()
             env.read_env()
+
+            response = """Hello,\n\n Thank you for your message! I have recieved it and I will reach out with clarifying questions or an estimate soon.\n\nYour budget:{0}\n\nYour message:{1}\n\nThanks,\n\nCaleb 3D Prints""".format(contact_form.cleaned_data.get("budget"), contact_form.cleaned_data.get("message"))
+
             # build email obj
             email_msg = EmailMessage(subject= f"3D Print Inquiry - {contact_form.cleaned_data["name"]}",
-                                                body= contact_form.cleaned_data.get("message") + contact_form.cleaned_data.get("budget"),
+                                                body= response,
                                                 from_email= env("FROM_EMAIL"),
                                                 to= [contact_form.cleaned_data["email"]],
                                                 bcc=[env("BCC_EMAIL")]
